@@ -5,6 +5,18 @@
 ![JavaScript Badge](https://img.shields.io/badge/JavaScript-%E2%9C%94-yellow)
 ![Status](https://img.shields.io/badge/Status-Concluído-success)
 
+# Índice
+
+- [🚀 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [📝 Funcionalidades](#-funcionalidades)
+- [📸 Screenshots](#-screenshots)
+- [💻 Como Usar](#-como-usar)
+- [🛠️ Instalação Local](#️-instalação-local)
+- [🤝 Contribuindo](#-contribuindo)
+- [📄 Licença](#-licença)
+- [✨ Agradecimentos](#-agradecimentos)
+
+## 📝 Descrição
 O projeto **Amigo Secreto** é um site simples que permite que você realize o sorteio de amigos secretos de maneira divertida e aleatória. Com ele, você pode inserir os nomes das pessoas que irão participar do sorteio e ao clicar no botão "Sortear Amigo", o sistema escolhe aleatoriamente um nome, garantindo que o nome seja sorteado de forma justa.
 
 ## 🚀 Tecnologias Utilizadas
