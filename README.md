@@ -78,7 +78,7 @@ Faça um fork do repositório.
 
 
 ## 📄 Licença
-Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENÇA](./LICENSE) para mais detalhes.
 
 
 
