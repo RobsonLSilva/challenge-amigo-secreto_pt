@@ -2,34 +2,47 @@
 
 let listaDeNomes = [];
 
+// Função para monitorar pressionamento de teclas
+//document.addEventListener("keydown", function(event) {
+    // Verifica se a tecla pressionada é o Enter (código 13)
+//    if (event.key === "Enter") {
+//        adicionarAmigo();
+//    }
+//});
+
 function adicionarAmigo(){
     // atribui o elemento input a variável campo
     let campo = document.querySelector('input');
 
     // Condição para verificar se o input está vazio, se estiver exibe um alerta para o usuário.
     if (campo.value == '') {
-        alert('Por favor, insira um nome.');
+        alert('Por favor, insira um nome válido.');
     } else {
         // Adiciona na lista mais um elemento
         listaDeNomes.push(campo.value);
-        limpaCampo();
     }
+
     atualizarListaDeAmigos()
+    limpaCampo();
+    document.getElementById('resultado').innerHTML = ''
+
 }
 
 // função para limpar o input
 function limpaCampo(){
-    let campo = document.querySelector('input');
+    let campo = document.getElementById('amigo');
     campo.value = '';
+    campo.select();
 }
 
 // Função para adicionar itens na lista que é demonstrada na tela
 function atualizarListaDeAmigos(){
-    // atribui o elemento ul a variavel listaAmigos
+    // atribui o elemento ul a variavel listaAmigos atravez do seu id
     let listaAmigos = document.getElementById('listaAmigos')
 
     // limpar o elemento ul para não ter nomes duplicados
     listaAmigos.innerHTML = '';
+
     for (let index = 0; index < listaDeNomes.length; index++) { 
         // Cria um novo <li>
         let lista = document.createElement('li');
@@ -62,11 +75,20 @@ function sortearAmigo(){
     if (listaDeNomes.length > 0) {
         let indiceSorteado = Math.floor(Math.random() * listaDeNomes.length);
         let nomeSorteado = listaDeNomes[indiceSorteado];
-
-        let resultado = document.getElementById('resultado');
-        resultado.innerHTML = 'O amigo secreto sorteado é: ' + nomeSorteado.charAt(0).toUpperCase() + nomeSorteado.slice(1);
-
+        listaDeNomes = [];
+        exibirTextoNaTela('resultado', 'O amigo secreto sorteado é: ' + nomeSorteado.charAt(0).toUpperCase() + nomeSorteado.slice(1));
+        reiniciarJogo();
     }
-    
 
+    function reiniciarJogo(){
+        limpaCampo();
+        let listaAmigos = document.getElementById('listaAmigos');
+        listaAmigos.innerHTML = '';
+    }
+
+    function exibirTextoNaTela(id, texto) {
+        let campo = document.getElementById(id);
+        campo.innerHTML = texto;
+        responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
+    }
 }
